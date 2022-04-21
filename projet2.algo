@@ -1,0 +1,59 @@
+PROCEDURE comparaison(v1:ARRAY_OF INTEGER,v2:ARRAY_OF INTEGER,VAR somme:integer)
+VAR
+BEGIN
+FOR i FROM 0 TO 9 STEP 1  DO
+    somme=somme+(v1[i]*v2[i]);
+END_FOR
+
+END
+
+
+ALGORITHM algorithm_name
+VAR
+v1: ARRAY_OF INTEGER[10];
+v2: ARRAY_OF INTEGER[10];
+somme: INTEGER;
+
+BEGIN
+somme:=0;
+FOR i FROM 0 TO 9 STEP 1  DO
+    Read(v1[i]);
+    Read(v2[i]);
+END_FOR
+comparaison(v1,v2,somme);
+IF (somme=0) THEN
+    Write('orto');
+ELSE
+    Write('non orto');
+END_IF
+
+
+
+END
+chams slimi — 19/04/2022
+check-algo3 function
+ALGORITHM vectors_orthogonal
+VAR
+    arr1,arr2:ARRAY_OF INTEGER [10];
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        Read (arr1[i])
+        Read (arr2[i])
+    END_FOR
+IF (dot_product(arr1,arr2)=0) THEN
+    write("vectors are orthogonal")
+ELSE
+     write("vectors are not orthogonal")
+END_IF
+END
+FUNCTION dot_product(tab1,tab2:ARRAY_OF INTEGER) :INTEGER
+VAR
+    sum:INTEGER:=0;
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+      sum:=sum+tab1[i]*tab2[i] ; 
+    END_FOR
+    RETURN sum ;
+END
